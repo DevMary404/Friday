@@ -11,7 +11,10 @@
     <div class="card-container" onclick="this.classList.toggle('flipped')">
         <div class="card">
             <div class="card-front">
-                <h1> اوني تشان مرر الماوس الآن </h1>
+                
+                <h1 class="desktop-text">اوني تشان مرر الماوس الان</h1>
+                
+                <h1 class="mobile-text">اوني تشان اضغط هنا الان</h1>
             </div>
 
             <div class="card-back">
@@ -39,7 +42,7 @@
         }
 
         .card-container {
-            perspective: 1000px; /* تم تصحيح هذه الخاصية لتعمل بطريقة صحيحة للثري دي */
+            perspective: 1000px;
             width: 350px;
             height: 480px;
             cursor: pointer;
@@ -80,6 +83,23 @@
         margin-bottom: 15px;
         letter-spacing: 5px;
         color: #f3ead8;
+       }
+
+       
+       .mobile-text {
+        display: none;
+       }
+       .desktop-text {
+        display: block;
+       }
+
+       @media (max-width: 768px) {
+           .desktop-text {
+               display: none;
+           }
+           .mobile-text {
+               display: block;
+           }
        }
 
        .card-back {
