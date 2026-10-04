@@ -8,7 +8,7 @@
 
 <body>
 
-    <div class="card-container">
+    <div class="card-container" onclick="this.classList.toggle('flipped')">
         <div class="card">
             <div class="card-front">
                 <h1> اوني تشان مرر الماوس الآن </h1>
@@ -16,14 +16,11 @@
 
             <div class="card-back">
                 <h1>اللهم صل وسلم وبارك على نبينا محمد</h1>
-                <p>إِنَّ اللَّهَ وَمَلَائِكَتَهُ يُصَلُّونَ عَلَى النَّبِيِّ ۚ يَا أَيُّهَا الَّذِينَ آمَنُوا صَلُّوا عَلَيْهِ وَسَلِّمُوا تَسْلِيمًا</p>
+                <p>إِنَّ اللَّهَ وَمَلَائِكَتَهُ يُصَلُّونَ عَلَى النَّبِيِّ ۚ يَا أَيُّهَا الَّذِينَ آمَنُوا صَلُّوا عَلَيْهِ وَسَلِّمُوا تَسْلِيمًا</p>
             </div>
         </div>
     </div>
-
-
-                
-            
+         
 
     <style>
         
@@ -42,7 +39,7 @@
         }
 
         .card-container {
-            position: 1000px;
+            perspective: 1000px; /* تم تصحيح هذه الخاصية لتعمل بطريقة صحيحة للثري دي */
             width: 350px;
             height: 480px;
             cursor: pointer;
@@ -55,7 +52,8 @@
             border-radius: 20px;
         }
 
-        .card-container:hover .card {
+        .card-container:hover .card,
+        .card-container.flipped .card {
             transform: rotateY(180deg) translateY(-10px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
@@ -108,4 +106,3 @@
     
 </body>
 </html>
-
